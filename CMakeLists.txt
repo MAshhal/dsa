@@ -9,4 +9,6 @@ add_executable(dsa main.cpp
         Stack.cpp
         Stack.h
         Queue.cpp
-        Queue.h)
+        Queue.h
+        BST.cpp
+        BST.h)

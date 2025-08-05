@@ -1,4 +1,6 @@
 #include <iostream>
+
+#include "BST.h"
 #include "LinkedList.h"
 #include "Queue.h"
 #include "Stack.h"
@@ -7,8 +9,7 @@ using namespace std;
 void test_linked_list();
 void test_stack();
 void test_queue();
-void test_priority_queue();
-void binary_search_tree();
+void test_bst();
 void test_avl();
 
 int main() {
@@ -20,6 +21,9 @@ int main() {
 
     cout << "\n=== Stack Test ===" << endl;
     test_stack();
+
+    cout << "\n ===BST Tree Test ===" << endl;
+    test_bst();
 
     return 0;
 }
@@ -107,4 +111,20 @@ void test_stack() {
     }
 
     s.display();
+}
+
+void test_bst() {
+    BST tree;
+    int values[] = {5, 3, 7, 2, 4, 6, 8};
+
+    std::cout << "Inserting values: ";
+    for (int v : values) {
+        std::cout << v << " ";
+        tree.insert(v);
+    }
+    std::cout << "\n\n";
+
+    tree.display_inorder();    // Should print sorted order
+    tree.display_preorder();   // Root-Left-Right
+    tree.display_postorder();  // Left-Right-Root
 }
